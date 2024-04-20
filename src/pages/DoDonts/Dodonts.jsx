@@ -1,5 +1,5 @@
 import React from 'react'
-import './dot.css'
+import '../../styles/dot.css'
 export default function Dodonts() {
     return (
         <>

@@ -1,34 +1,43 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { RiDashboard3Line } from "react-icons/ri";
+import { MdContactMail } from "react-icons/md";
+import { ImInfo } from "react-icons/im";
+import { MdOutlineRemoveDone } from "react-icons/md";
 import { FaSearch } from "react-icons/fa";
-import { TbDeviceDesktopAnalytics } from "react-icons/tb";
-import { IoSettingsOutline } from "react-icons/io5";
 import { FaWind } from "react-icons/fa";
-import { Link } from 'react-router-dom'
-import Home from "./Home";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { FaQuestion } from "react-icons/fa";
+import { NavLink } from 'react-router-dom'
+import { Routes, Route } from "react-router-dom";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import Search from "../pages/Search/Search";
-import { FaQuestion } from "react-icons/fa";
-import Faq from "./Faq";
-import { ImInfo } from "react-icons/im";
-import Effect from "./Effects";
-import { MdOutlineRemoveDone } from "react-icons/md";
-import Dodonts from "./Dodonts";
+import Faq from "../pages/Faq/Faq";
+import Effect from "../pages/Information/Effects";
+import Dodonts from "../pages/DoDonts/Dodonts";
+import Contact from "../pages/Contact/Contact";
 import Footer from "./Footer";
+import Home from "./Home";
 
 const Sidebar = () => {
+
     const [open, setOpen] = useState(true);
+    const main = useRef();
     const Menus = [
         { title: "Dashboard", src: "Chart_fill", child: <RiDashboard3Line size={32} color="white" />, to: "/dashboard" },
         { title: "Search", src: "Search", child: <FaSearch size={32} color="white" />, to: "/search" },
         { title: "Faq", src: "Search", child: <FaQuestion size={32} color="white" />, to: "/faq" },
         { title: "Information", src: "info", child: <ImInfo size={32} color="white" />, to: "/info" },
         { title: "Do's & Dont's", src: "info", child: <MdOutlineRemoveDone size={32} color="white" />, to: "/dodonts" },
+        { title: "Contact us", src: "info", child: <MdContactMail size={32} color="white" />, to: "/contact" },
 
     ];
-
+    const linkStyle = ({ isActive }) => {
+        return {
+            color: isActive && "white",
+            fontWeight: isActive && "700",
+            fontSize: isActive && "48px"
+        }
+    }
     return (
         <div className="flex">
             <div
@@ -42,20 +51,22 @@ const Sidebar = () => {
                     onClick={() => setOpen(!open)}
                 />
                 <div className="flex gap-x-4 items-center">
-                    <FaWind size={32}
+                    <div
                         className={`cursor-pointer duration-500 ${open && "rotate-[360deg]"
                             }`}
-                    />
+                    ><FaWind size={32} /></div>
                     <h1
                         className={`text-white origin-left font-medium text-xl duration-200 ${!open && "scale-0"
                             }`}
+                        style={{ fontWeight: "900", fontSize: "2.4rem" }}
                     >
-                        AQI
+                        A<span className={`text-black origin-left font-medium text-xl duration-200 ${!open && "scale-0"
+                            }`} style={{ fontWeight: "900", fontSize: "2.5rem" }}>Q</span>I
                     </h1>
                 </div>
                 <ul className="pt-6">
                     {Menus.map((Menu, index) => (
-                        <Link to={Menu.to} key={index}>
+                        <NavLink to={Menu.to} key={index} style={linkStyle}>
                             <li
                                 key={index}
                                 className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 
@@ -67,22 +78,22 @@ const Sidebar = () => {
                                     {Menu.title}
                                 </span>
                             </li>
-                        </Link>
+                        </NavLink>
                     ))}
                 </ul>
             </div>
-            <div className="h-screen flex-1 p-7 overflow-auto main">
+            <div className="h-screen flex-1 overflow-auto main" ref={main}>
                 <Routes>
-                    <Route path='/' element={<><Home /></>} />
-                    <Route path='/dashboard' element={<><Dashboard /></>} />
-                    <Route path='/search' element={<><Search /><Footer /></>} />
-                    <Route path='/faq' element={<><Faq /><Footer /></>} />
-                    <Route path='/info' element={<><Effect /><Footer /></>} />
-                    <Route path='/dodonts' element={<Dodonts />} />
+                    <Route path='/' element={<><div className="second"><Home /></div><Footer main={main} /></>} />
+                    <Route path='/dashboard' element={<><div className="second"><Dashboard /></div><Footer main={main} /></>} />
+                    <Route path='/search' element={<><div className="second"><Search /></div><Footer main={main} /></>} />
+                    <Route path='/faq' element={<><div className="second"><Faq /></div><Footer main={main} /></>} />
+                    <Route path='/info' element={<><div className="second"><Effect /></div><Footer main={main} /></>} />
+                    <Route path='/dodonts' element={<><div className="second"><Dodonts /></div><Footer main={main} /></>} />
+                    <Route path='/contact' element={<><div className="second"><Contact /></div><Footer main={main} /></>} />
                     {/* <Route path='/' element={<Home />} />
                     <Route path='/' element={<Home />} /> */}
                 </Routes>
-                {/* <Dashboard /> */}
             </div>
         </div>
     );

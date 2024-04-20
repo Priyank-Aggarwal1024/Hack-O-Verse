@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Faq.css'
+import '../../styles/Faq.css'
 function Faq(props) {
     return (
         <>
@@ -9,7 +9,7 @@ function Faq(props) {
             <div className="faq">
                 <div className="accordian">
                     <div className="content-box">
-                        <label for="ques-1" className="label">
+                        <label htmlFor="ques-1" className="label">
                             <span> What is the current Air Quality Index (AQI) in New Delhi ?</span>
                             <input type="checkbox" name="ques-1" id="ques-1" />
                             <div className="content">
@@ -19,7 +19,7 @@ function Faq(props) {
 
                     </div>
                     <div className="content-box">
-                        <label for="ques-2" className="label">
+                        <label htmlFor="ques-2" className="label">
                             <span> What is the current concentration of PM2.5 in New Delhi?</span>
                             <input type="checkbox" name="ques-2" id="ques-2" />
                             <div className="content" >
@@ -29,7 +29,7 @@ function Faq(props) {
 
                     </div>
                     <div className="content-box">
-                        <label for="ques-3" className="label">
+                        <label htmlFor="ques-3" className="label">
                             <span> What season is the worst air quality in New Delhi?</span>
                             <input type="checkbox" name="ques-3" id="ques-3" />
                             <div className="content">
@@ -39,7 +39,7 @@ function Faq(props) {
 
                     </div>
                     <div className="content-box">
-                        <label for="ques-4" className="label">
+                        <label htmlFor="ques-4" className="label">
                             <span>When was the best air quality at New Delhi in the last 24 hrs?</span>
                             <input type="checkbox" name="ques-4" id="ques-4" />
                             <div className="content">
@@ -49,7 +49,7 @@ function Faq(props) {
 
                     </div>
                     <div className="content-box">
-                        <label for="ques-5" className="label">
+                        <label htmlFor="ques-5" className="label">
                             <span>Should I take care before going outdoor when New Delhi AQI is very high?</span>
                             <input type="checkbox" name="ques-4" id="ques-4" />
                             <div className="content">
@@ -59,7 +59,7 @@ function Faq(props) {
 
                     </div>
                     <div className="content-box">
-                        <label for="ques-6" className="label">
+                        <label htmlFor="ques-6" className="label">
                             <span>Primary causes of outdoor and indoor air pollution in New Delhi?</span>
                             <input type="checkbox" name="ques-4" id="ques-4" />
                             <div className="content">

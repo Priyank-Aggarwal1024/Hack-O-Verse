@@ -58,7 +58,6 @@ const Search = () => {
         fetch('https://air-quality-by-api-ninjas.p.rapidapi.com/v1/airquality?city=' + loc, options)
             .then(response => response.json())
             .then(data => {
-                console.log(data)
                 setMainData([
                     { ...data.CO, name: "CO" },
                     { ...data.NO2, name: "NO2" },

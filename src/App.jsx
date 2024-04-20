@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './App.css'
+import './styles/App.css'
 import Chart from 'chart.js/auto';
 import Sidebar from './components/Sidebar';
 import { BrowserRouter } from 'react-router-dom';
