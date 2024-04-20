@@ -16,6 +16,7 @@ import { ImInfo } from "react-icons/im";
 import Effect from "./Effects";
 import { MdOutlineRemoveDone } from "react-icons/md";
 import Dodonts from "./Dodonts";
+import Footer from "./Footer";
 
 const Sidebar = () => {
     const [open, setOpen] = useState(true);
@@ -25,8 +26,7 @@ const Sidebar = () => {
         { title: "Faq", src: "Search", child: <FaQuestion size={32} color="white" />, to: "/faq" },
         { title: "Information", src: "info", child: <ImInfo size={32} color="white" />, to: "/info" },
         { title: "Do's & Dont's", src: "info", child: <MdOutlineRemoveDone size={32} color="white" />, to: "/dodonts" },
-        { title: "Analytics", src: "Chart", child: <TbDeviceDesktopAnalytics size={32} color="white" /> },
-        { title: "Setting", src: "Setting", child: <IoSettingsOutline size={32} color="white" /> },
+
     ];
 
     return (
@@ -73,14 +73,14 @@ const Sidebar = () => {
             </div>
             <div className="h-screen flex-1 p-7 overflow-auto main">
                 <Routes>
-                    <Route path='/' element={<Home />} />
-                    <Route path='/dashboard' element={<Dashboard />} />
-                    <Route path='/search' element={<Search />} />
-                    <Route path='/faq' element={<Faq />} />
-                    <Route path='/info' element={<Effect />} />
+                    <Route path='/' element={<><Home /></>} />
+                    <Route path='/dashboard' element={<><Dashboard /></>} />
+                    <Route path='/search' element={<><Search /><Footer /></>} />
+                    <Route path='/faq' element={<><Faq /><Footer /></>} />
+                    <Route path='/info' element={<><Effect /><Footer /></>} />
                     <Route path='/dodonts' element={<Dodonts />} />
-                    <Route path='/' element={<Home />} />
-                    <Route path='/' element={<Home />} />
+                    {/* <Route path='/' element={<Home />} />
+                    <Route path='/' element={<Home />} /> */}
                 </Routes>
                 {/* <Dashboard /> */}
             </div>

@@ -5,6 +5,7 @@ import pic5 from '../assets/change.jpeg'
 import pic6 from '../assets/dam.jpeg'
 import pic7 from '../assets/acid.jpeg'
 import '../Efects.css'
+// import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 function Effect() {
