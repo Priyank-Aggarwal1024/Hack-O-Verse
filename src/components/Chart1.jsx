@@ -3,13 +3,11 @@ import { Chart } from 'chart.js';
 import data from '../data';
 function Chart1(props) {
     const [aqi, setAqi] = useState(data.data.map((item, ind) => { return { aqi: item.aqi, time: item.datetime.slice(-2) + " : 00" } }))
-
     const [no2, setNo2] = useState(data.data.map((item, ind) => { return { no2: item.no2, time: item.datetime.slice(-2) + " : 00" } }))
     const [o3, setO3] = useState(data.data.map((item, ind) => { return { o3: item.o3, time: item.datetime.slice(-2) + " : 00" } }))
     const [pm10, setPm10] = useState(data.data.map((item, ind) => { return { pm10: item.pm10, time: item.datetime.slice(-2) + " : 00" } }))
     const [pm25, setPm25] = useState(data.data.map((item, ind) => { return { pm25: item.pm25, time: item.datetime.slice(-2) + " : 00" } }))
     const [so2, setSo2] = useState(data.data.map((item, ind) => { return { so2: item.so2, time: item.datetime.slice(-2) + " : 00" } }));
-    // console.log(aqi, so2, pm10, pm25, o3, no2)
     useEffect(() => async function () {
         const ch1 = new Chart(
             document.getElementById('acquisitions1'),
