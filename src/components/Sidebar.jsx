@@ -64,7 +64,7 @@ const Sidebar = () => {
                     ))}
                 </ul>
             </div>
-            <div className="h-screen flex-1 p-7 overflow-auto">
+            <div className="h-screen flex-1 p-7 overflow-auto main">
                 <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/dashboard' element={<Dashboard />} />

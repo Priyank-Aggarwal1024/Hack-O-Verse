@@ -87,18 +87,3 @@
   font-size: large;
   margin-top: 20px;
 }
-
-.nav_bar {
-  background-color:
-    rgb(67, 64, 247);
-}
-
-.container {
-  margin-top: 30px;
-  margin: auto;
-}
-
-.container {
-  background-color: rgb(239, 244, 245);
-  border-radius: 20px;
-}
