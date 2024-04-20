@@ -1,0 +1,104 @@
+/* .main {
+  overflow: hidden;
+}
+
+.main2 {
+  overflow: auto;
+} */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.button-container {
+  flex-wrap: wrap;
+}
+
+#myGrid {
+  flex: 1;
+}
+
+#myChart {
+  flex: 2;
+  min-height: 530px;
+}
+
+.graph {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 4rem;
+}
+
+/* .graph>div {
+  min-width: 400px;
+  width: 500px;
+} */
+
+#city {
+  text-align: center;
+  font-weight: 600;
+  font-size: x-large;
+}
+
+.submit {
+  background-color: #8594e6;
+  border: solid;
+  transition: all 0.3s ease;
+}
+
+.submit:hover {
+  background-color: aliceblue;
+  border-color: black;
+  color: black;
+}
+
+.head1 {
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  font-size: xx-large;
+  color: rgb(255, 255, 255);
+}
+
+.main-content {
+  background-color: #d5def5;
+  border: solid 1px #430f58;
+}
+
+.head2 {
+  background-color: #6643b5;
+  font-weight: bolder;
+}
+
+.content1 {
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  font-size: larger;
+}
+
+.box1 {
+  margin-top: 20px;
+}
+
+.content-box {
+
+  font-size: large;
+  margin-top: 20px;
+}
+
+.nav_bar {
+  background-color:
+    rgb(67, 64, 247);
+}
+
+.container {
+  margin-top: 30px;
+  margin: auto;
+}
+
+.container {
+  background-color: rgb(239, 244, 245);
+  border-radius: 20px;
+}

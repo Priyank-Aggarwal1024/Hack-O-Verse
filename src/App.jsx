@@ -1,13 +1,18 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-
+import Chart from 'chart.js/auto';
+import Sidebar from './components/Sidebar';
+import { BrowserRouter } from 'react-router-dom';
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+      <BrowserRouter>
+        <Sidebar />
+
+      </BrowserRouter>
+
 
     </>
   )
