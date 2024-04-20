@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { RiDashboard3Line } from "react-icons/ri";
-import { BiMessageRoundedDetail } from "react-icons/bi";
 import { FaSearch } from "react-icons/fa";
 import { TbDeviceDesktopAnalytics } from "react-icons/tb";
 import { IoSettingsOutline } from "react-icons/io5";
@@ -11,13 +10,21 @@ import Home from "./Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import Search from "../pages/Search/Search";
+import { FaQuestion } from "react-icons/fa";
+import Faq from "./Faq";
+import { ImInfo } from "react-icons/im";
+import Effect from "./Effects";
+import { MdOutlineRemoveDone } from "react-icons/md";
+import Dodonts from "./Dodonts";
 
 const Sidebar = () => {
     const [open, setOpen] = useState(true);
     const Menus = [
         { title: "Dashboard", src: "Chart_fill", child: <RiDashboard3Line size={32} color="white" />, to: "/dashboard" },
-        { title: "Inbox", src: "Chat", child: <BiMessageRoundedDetail size={32} color="white" /> },
         { title: "Search", src: "Search", child: <FaSearch size={32} color="white" />, to: "/search" },
+        { title: "Faq", src: "Search", child: <FaQuestion size={32} color="white" />, to: "/faq" },
+        { title: "Information", src: "info", child: <ImInfo size={32} color="white" />, to: "/info" },
+        { title: "Do's & Dont's", src: "info", child: <MdOutlineRemoveDone size={32} color="white" />, to: "/dodonts" },
         { title: "Analytics", src: "Chart", child: <TbDeviceDesktopAnalytics size={32} color="white" /> },
         { title: "Setting", src: "Setting", child: <IoSettingsOutline size={32} color="white" /> },
     ];
@@ -69,7 +76,9 @@ const Sidebar = () => {
                     <Route path='/' element={<Home />} />
                     <Route path='/dashboard' element={<Dashboard />} />
                     <Route path='/search' element={<Search />} />
-                    <Route path='/' element={<Home />} />
+                    <Route path='/faq' element={<Faq />} />
+                    <Route path='/info' element={<Effect />} />
+                    <Route path='/dodonts' element={<Dodonts />} />
                     <Route path='/' element={<Home />} />
                     <Route path='/' element={<Home />} />
                 </Routes>

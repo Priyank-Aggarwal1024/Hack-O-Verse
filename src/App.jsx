@@ -3,6 +3,7 @@ import './App.css'
 import Chart from 'chart.js/auto';
 import Sidebar from './components/Sidebar';
 import { BrowserRouter } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css'
 function App() {
   const [count, setCount] = useState(0)
 
